@@ -486,6 +486,11 @@ Function getmedcodes(targetpracid As Long, targettextid As Long) As String
 ' or 0 if it is not found. The sorting is by pracid then textid.
 ' This function uses a binary search, comparing both pracid
 ' and textid with the target.
+If ntexts = 0 Or (targetpracid = 0 And targettextid = 0) Then
+    getmedcodes = "0"
+    Exit Function
+End If
+
 Dim top As Long, bot As Long, trial As Long
 top = 0
 bot = ntexts
