@@ -1,0 +1,3 @@
+# All files to have Windows-style line endings
+# (in order to work with Visual Basic)
+text eol=crlf

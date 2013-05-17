@@ -1,0 +1,44 @@
+enttype	description	category	data_fields	data1	data1_lkup	data2	data2_lkup	data3	data3_lkup	data4	data4_lkup	comment	medcode	readterm
+1001	Blood pressure	Examination Findings	2	Diastolic		Systolic 							1	O/E - blood pressure reading
+1002	Medical History	Medical History	3	Date of event	YYYYMMDD	Duration		Duration units: 	SUM	Age in years		SUM lookup: 148=years, 147=weeks, 101=month, 41=days		(extracted from free text)
+1085	Absence of Condition	Medical History	1	Medcode For Condition	Medical Dictionary								72907	Negative
+1087	Family History	Medical History	1	Medcode For Condition	Medical Dictionary								17485	[V]Health problems in family
+1131	Pulse (CVS/BP)	Examination Findings	1	Pulse rate 									6154	O/E - pulse rate
+1148	Death administration	Death Administration	1	Date of Death	YYYYMMDD								43009	Date of death
+1149	Cause of death	Death Administration	1	Category of death	COD							COD lookup: 1=Ia, 2=1b, 3=1c, 4=II.		(extracted from free text)
+1152	Albumin	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	31969	Albumin in sample
+1157	B12 levels	Biochemistry (Other)	2	Operator	OPR	Value						Units and normal range are not extracted. Operator is always =	7926	Serum Vitamin B12
+1159	Calcium	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	77	Serum calcium 
+1163	Serum cholesterol	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	12	Serum cholesterol
+1165	Serum creatinine	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	5	Serum creatinine
+1169	Serum ferritin	Biochemistry (Other)	2	Operator	OPR	Value						OPR = 3 (=)	8491	Serum ferritin 
+1170	Folate level	Biochemistry (Other)	2	Operator	OPR	Value						OPR = 3 (=)	13748	Serum folate
+1173	Haemoglobin	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	4	Haemoglobin estimation
+1175	High density lipoprotein	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	44	Serum HDL cholesterol level
+1177	Low density lipoprotein	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	65	Serum LDL cholesterol level
+1182	Mean corpuscular volume	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	10	Mean corpuscular volume (MCV)
+1189	Platelets	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	7	Platelet count
+1197	Triodothyronine	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	13791	Serum T3 level
+1198	Thyroxine	Biochemistry (Other)	2	Operator	OPR	Value						OPR = 3 (=)	941	Serum T4 level
+1202	Triglycerides	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	37	Serum triglycerides
+1203	Thyroid stimulating hormone	Biochemistry (Hormone)	2	Operator	OPR	Value						OPR = 3 (=)	13598	TSH level
+1204	Urea - blood	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	18587	Urea in sample
+1207	Total White Blood cell count	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	13818	White cell count
+1273	Erythrocyte sedimentation rate	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	46	Erythrocyte sedimentation rate
+1275	HbA1c - diabetic control	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	14051	Haemoglobin A1c level
+1311	PF current	Asthma	2	Operator	OPR	Value						OPR = 3 (=)	11772	Peak flow rate
+1323	INR	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	71	International normalised ratio
+2000	Red cell distribution width	Haematology	2	Operator	OPR	Value						Not available in structured data	64	Red blood cell distribution width
+2001	Cause of death (no category)	Death Administration	0									Cause of death, category not specified		(extracted from free text)
+2002	Negative past medical history	Medical History	1	Medcode For Condition	Medical Dictionary							Negative past medical history	11435	No relevant past medical hist.
+2003	Negative family history	Medical History	1	Medcode For Condition	Medical Dictionary							Negative family history	13240	No relevant family history
+2004	Suspected condition	Medical History	1	Medcode For Condition	Medical Dictionary								5494	[V]Observation and evaluation for suspected conditions
+2005	Current or previous diagnosis	Medical History	4	Date of event	YYYYMMDD	Duration		Duration units	SUM	Age in years				(extracted from free text)
+2006	Weeks gestation	Maternity	1	Weeks gestation 									55352	Gestational age
+2007	Estimated date of delivery	Maternity	1	Estimated date of delivery	YYYYMMDD								8879	Estimated date of delivery
+2008	Last menstrual period	Maternity	1	Last menstrual period	YYYYMMDD								6769	Last menstrual period -1st day
+2009	Hospital admission	Medical History	2	Admission date	YYYYMMDD	Discharge date	YYYYMMDD					Admission date must be before discharge date	43828	Hospital admission note
+2010	Sickness certificate	Medical History	3	Until date	YYYYMMDD	Duration		Duration units	SUM				5761	[V]Issue of medical certificate
+2011	Quantitative test result	Diagnostic Tests	2	Operator	OPR	Value								(original medcode associated with text)
+2012	Qualitative test result	Diagnostic Tests	1	Qualifier	TQU							For generic test results, keep the original medcode of the test and use the TQU lookup for qualifier: 15=nil, 9=normal, 12=abnormal, 22=negative, 21=positive		(original medcode associated with text)
+2013	Follow up	Medical History	3	Follow-up date	YYYYMMDD	Follow-up interval		Follow-up interval units	SUM				1793	Medical follow-up

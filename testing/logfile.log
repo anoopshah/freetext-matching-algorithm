@@ -1,0 +1,23 @@
+Freetext Matching Algorithm version 15.
+Analysis started at 15:18:28 on 17/05/2013
+
+Loading lookup tables from Z:\home\anoop\u1\lookups\
+Loaded the attribute table (187 rows) from Z:\home\anoop\u1\lookups\attributes.txt
+Loaded checkterms (21 rows) from Z:\home\anoop\u1\lookups\checkterms.txt
+Loaded synonyms table (2041 rows) from Z:\home\anoop\u1\lookups\synonyms.txt
+Loaded 46 words/phrases to ignore from Z:\home\anoop\u1\lookups\ignore.txt and 16 raw phrases to ignore from Z:\home\anoop\u1\lookups\ignorephrase.txt
+Loaded native terms from Z:\home\anoop\u1\lookups\nativeterms.txt; 81613 terms in total of which 28005 can be matched to.
+Loaded virtual terms from Z:\home\anoop\u1\lookups\virtualterms.txt; 81623 terms in total of which 28015 can be matched to.
+Loaded alternate terms from Z:\home\anoop\u1\lookups\alternateterms.txt; 92357 terms in total of which 38749 can be matched to. Sorting lookup tables.
+Loaded 60388 words from Z:\home\anoop\u1\lookups\2of4brif.txt; total number of distinct words in this wordlist, Read terms or synonyms = 68127
+
+Loading pracid,textid,medcode from Z:\home\anoop\Documents\fma\public_git\testing\samplemedcodes.csv
+pracid is in column 1
+textid is in column 2
+medcode is in column 3
+52 rows loaded.
+
+Opening input file Z:\home\anoop\Documents\fma\public_git\testing\sampletexts.txt
+Opening output file Z:\home\anoop\Documents\fma\public_git\testing\output.csv
+
+Finished analysing 53 texts (approx 218 words) at 15:18:35

@@ -1,0 +1,51 @@
+1	1	Admitted 23 Nov 2012; discharged 5 Dec 2012
+1	2	Presented with sudden onset severe central chest pain radiating to the neck. ECG showed ST elevation. Diagnosis STEMI. Admitted to hospital.
+1	3	123/78
+1	4	no chest pain
+1	5	dad has angina
+2	6	78/min
+2	7	23/01/13
+2	8	Albumin 23
+2	9	304
+2	10	2.4
+3	11	5.4
+3	12	132
+3	13	203
+3	14	14.2
+3	15	Hb 14.3
+4	16	HDL 1.3
+4	17	LDL 3.2
+4	18	MCV 96fL
+4	19	Platelets 132
+4	20	2.3
+5	21	13.4
+5	22	2.3
+5	23	13.6
+5	24	Urea 5.4
+5	25	total wbc 5.4
+6	26	34 mm/h
+6	27	5.60%
+6	28	540L/min
+6	29	1.3
+6	30	23. 0%
+7	31	no previous stroke
+7	32	no family history of diabetes
+7	33	possible pulmonary embolus
+7	34	12/40 weeks pregnant
+7	35	5/6/2013
+8	36	Lmp 6/7/2013
+8	37	Admission date 23 Nov 2012, Discharge date 5 Dec 2012
+8	38	5 weeks post MI
+8	39	see in 6 months
+8	40	myocardial infarction
+9	41	admitted to hospital with severe chest pain. Diagnosed myocardial infarction.
+9	42	angiogram showed 3 vessel disease and mod impaired lv function
+9	43	Normal  pregnancy. Acute left ventricular failure. Referred to coroner.
+9	44	good lv function
+9	45	ejection fraction 80%
+10	46	hyperdynamic left ventricle
+10	47	lvh
+10	48	single vessel coronary disease
+10	49	referred to hosptial with sudden onset chest pain; suspected MI. ECG showed acute stemi
+10	50	angiogram showed severely stenosed LAD but patent LMS. Minor circumflex disease. Normal right coronary. Normal LV function.
+

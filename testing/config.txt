@@ -1,0 +1,7 @@
+infile  Z:\home\anoop\Documents\fma\public_git\testing\sampletexts.txt
+medcodefile Z:\home\anoop\Documents\fma\public_git\testing\samplemedcodes.txt
+outfile  Z:\home\anoop\Documents\fma\public_git\testing\output.csv
+logfile  Z:\home\anoop\Documents\fma\public_git\testing\logfile.log
+lookups  Z:\home\anoop\u1\lookups\
+freetext  
+medcode  
