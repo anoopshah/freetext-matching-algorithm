@@ -6,7 +6,7 @@ enttype	description	category	data_fields	data1	data1_lkup	data2	data2_lkup	data3
 1131	Pulse (CVS/BP)	Examination Findings	1	Pulse rate 									6154	O/E - pulse rate
 1148	Death administration	Death Administration	1	Date of Death	YYYYMMDD								43009	Date of death
 1149	Cause of death	Death Administration	1	Category of death	COD							COD lookup: 1=Ia, 2=1b, 3=1c, 4=II.		(extracted from free text)
-1152	Albumin	Haematology	2	Operator	OPR	Value						OPR = 3 (=)	31969	Albumin in sample
+1152	Albumin	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	31969	Albumin in sample
 1157	B12 levels	Biochemistry (Other)	2	Operator	OPR	Value						Units and normal range are not extracted. Operator is always =	7926	Serum Vitamin B12
 1159	Calcium	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	77	Serum calcium 
 1163	Serum cholesterol	Biochemistry (Routine)	2	Operator	OPR	Value						OPR = 3 (=)	12	Serum cholesterol
