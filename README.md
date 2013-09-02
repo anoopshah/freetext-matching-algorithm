@@ -66,10 +66,10 @@ To test the program, supply a single free text string instead of input and outpu
 
 All files must have Windows-style line endings.
 
-* infile -- tab separated file with no quotes, and 3 columns without column headers, in any order:
-    * pracid -- unique practice identifier
-    * textid -- unique identifier for free text string within practice
-    * text -- free text
+* infile -- tab separated file with no quotes, and 3 columns without column headers:
+    * Column 1: unique practice identifier (pracid)
+    * Column 2: unique identifier for free text string within practice (textid)
+    * Column 3: free text
 
 * medcodefile -- comma separated values, with columns pracid, textid and medcode, sorted by pracid and textid. Column names are optional.
     * pracid -- unique practice identifier
