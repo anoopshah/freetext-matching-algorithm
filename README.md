@@ -11,6 +11,10 @@ Shah AD, Martinez C, Hemingway H. The freetext matching algorithm: a computer pr
 
 Please send feedback, bug reports and suggested modifications to the lookup tables to anoop (@) doctors.org.uk.
 
+## Acknowledgements
+
+This software was developed as part of the CALIBER programme, funded by the Wellcome Trust (086091/Z/08/Z) and the National Institute for Health Research (NIHR) under its Programme Grants for Applied Research programme (RP-PG-0407-10314). The author is supported by a Wellcome Trust Clinical Research Training Fellowship (0938/30/Z/10/Z).
+
 ## Compiling and using the algorithm
 
 The folder *vb* contains the source code (Visual Basic 6.0). It can be compiled using the Microsoft Visual Basic compiler or imported into a Visual Basic for Applications runtime environment such as Microsoft Access.
