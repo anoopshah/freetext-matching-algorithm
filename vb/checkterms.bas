@@ -137,7 +137,7 @@ Do
 Loop Until a > pd.max
 
 If countdates > 1 Then ' ambiguous date - convert all dates to 'machinequery'
-    ' Note that machinequery dates are not recurned by fma_gold as they do not have an
+    ' Note that machinequery dates are not returned by fma_gold as they do not have an
     ' entity type; they are simply ignored.
     If debug_ Then debug_string = debug_string & _
         "More than one date detected -- to be removed" & Chr$(13) & Chr$(10)
