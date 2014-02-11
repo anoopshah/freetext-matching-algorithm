@@ -29,7 +29,8 @@ do_analysis logfile:=getParameterFromFile("logfile", Command), _
     medcodefile:=getParameterFromFile("medcodefile", Command), _
     outfile:=getParameterFromFile("outfile", Command), _
     freetext:=getParameterFromFile("freetext", Command), _
-    medcode:=getParameterFromFile("medcode", Command)
+    medcode:=getParameterFromFile("medcode", Command), _
+    ignoreerrors:=getParameterFromFile("ignoreerrors", Command)
 End Sub
 
 Function getParameterFromFile(parameterName As String, filename As String) As String

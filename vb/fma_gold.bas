@@ -1,3 +1,4 @@
+Attribute VB_Name = "fma_gold"
 Option Compare Binary
 Option Explicit
 
@@ -44,7 +45,8 @@ Dim ntexts As Long ' actual number of texts
 Sub do_analysis(logfile As String, lookups As String, _
     Optional infile As String, Optional medcodefile As String, _
     Optional outfile As String, Optional freetext As String, _
-    Optional medcode As String, Optional origmedcode As Long)
+    Optional medcode As String, Optional origmedcode As Long, _
+    Optional ignoreerrors As String)
 ' FMA gold analysis of free text. medcodefile is the file with medcodes
 ' to be appended to the free text to provide the analysis modes.
 ' This file is optional. If not provided, medcode is assumed to be
@@ -62,20 +64,25 @@ Dim logfileno As Integer
 Dim numtexts As Long
 Dim numwd As Long
 
-logfileno = freefile
+logfileno = FreeFile
 numtexts = 0
 numwd = 0
 
 Open logfile For Output As #logfileno
-Print #logfileno, "Freetext Matching Algorithm version 15."
-Print #logfileno, "Analysis started at " & Time & " on " & date & newline
+Print #logfileno, "Freetext Matching Algorithm version 16."
+Print #logfileno, "Analysis started at " & Time & " on " & Date & newline
 
 ' Initialise lookups
 Dim lookupfile As Integer
-lookupfile = freefile
+lookupfile = FreeFile
 
 Print #logfileno, "Loading lookup tables from " & lookups
 Print #logfileno, freetext_core.import_all_lookups(lookups) & newline
+
+If in_set(ignoreerrors, "TRUE", "T", "true", "t") Then
+    Print #logfileno, "Ignoring any errors during program execution"
+    On Error Resume Next
+End If
 
 If freetext = "" Then
     ' Load from file
@@ -85,14 +92,14 @@ If freetext = "" Then
     
     Dim infileno As Integer
     Dim outfileno As Integer
-    infileno = freefile
+    infileno = FreeFile
     
     ' Open input file
     Open infile For Input As #infileno
     Print #logfileno, "Opening input file " & infile
     
     ' Open output file
-    outfileno = freefile
+    outfileno = FreeFile
     Open outfile For Output As #outfileno
     Print #logfileno, "Opening output file " & outfile
     Print #outfileno, "pracid,textid,origmedcode,medcode,enttype,data1,data2,data3,data4"
@@ -104,7 +111,7 @@ If freetext = "" Then
     Dim rawtext As String
     Dim i As Long ' counter for medcodes
     Dim j As Long ' counter for outdata
-    
+
     ' Loop through the input file, interpreting each text
     Do While Not EOF(infileno)
         ' Read the next line of text
@@ -173,7 +180,7 @@ Else
     Print #logfileno, "pracid,textid,medcode,enttype,data1,data2,data3,data4,std_term"
     For j = 1 To outrows
         Print #logfileno, thispracid & delim & thistextid & delim & _
-            delim & outdata(j) & delim & terms.std_term(CLng(dissect(outdata(j), 1, delim)))
+            outdata(j) & delim & terms.std_term(CLng(dissect(outdata(j), 1, delim)))
     Next
 End If
 Close #logfileno
@@ -557,7 +564,7 @@ Dim message As String
 On Error GoTo errortrapping:
 
 message = "Loading pracid,textid,medcode from " & filename & newline
-fileno = freefile
+fileno = FreeFile
 
 ' Open the file and read the first line
 Open filename For Input As #fileno

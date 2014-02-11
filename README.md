@@ -19,34 +19,40 @@ This software was developed as part of the CALIBER programme, funded by the Well
 
 The folder *vb* contains the source code (Visual Basic 6.0). It can be compiled using the Microsoft Visual Basic compiler or imported into a Visual Basic for Applications runtime environment such as Microsoft Access.
 
-There are two pre-compiled executables in the binaries folder, both of which were compiled using Microsoft Visual Basic 6.0:
+There are pre-compiled executables in the binaries folder, compiled using Microsoft Visual Basic 6.0:
 
-* fma15command.exe -- a command line version, which takes as its single argument the path to a configuration file. 
+* fma16command.exe -- a command line version, which takes as its single argument the path to a configuration file. 
+* fma15command.exe -- previous command line version. 
 * fma15gui.exe -- a Visual Basic form, with a dialog box for entering the names of input and output files
+
+Version 16 includes the option to ignore errors when running the program, but is otherwise identical to Version 15. 
 
 The lookups must be downloaded from the repository and saved in a folder which is accessible to the program. Do not change the names of these files. If modifying the lookup tables, ensure that they remain in the same format (see https://github.com/anoopshah/freetext-matching-algorithm-lookups/blob/master/README.md for details). The binaries have been tested on Microsoft Windows and wine-1.5.26.
 
-### Command-line version (fma15command.exe)
+### Command-line version (fma16command.exe)
 
 This program can be run on Windows from the command line thus:
 
-    fma15command.exe argument
+    fma16command.exe argument
 
 On Linux:
 
-    wine fma15command.exe argument
+    wine fma16command.exe argument
 
 where 'argument' is the path to a configuration file. An example of a configuration file is given in the *testing* folder. This executable is designed to work with the *CALIBERfma* R package, to facilitate the development and review of algorithms.
 
-The configuration file must be a plain text file with the parameter name at the start of the line, followed by one or more spaces and then the parameter value (no quotes). The parameters can be listed in any order and some are optional. They are as follows:
+The configuration file must be a plain text file with the parameter name at the start of the line, followed by one or more spaces and then the parameter value (no quotes). The parameters can be listed in any order and are as follows:
 
 * infile -- full filepath to input file with pracid, textid and free text
-* medcodefile -- full filepath of file mapping pracid and textid to medcode
+* medcodefile -- (optional) full filepath of file mapping pracid and textid to medcode
 * outfile -- full filepath of output file (it will be over-written silently if a file of this name already exists)
-* logfile -- full filepath of log file (it will be over-written silently if a file of this name already exists)
-* lookups -- full path to folder containing lookup tables
+* logfile -- (mandatory) full filepath of log file (it will be over-written silently if a file of this name already exists)
+* lookups -- (mandatory) full path to folder containing lookup tables
 * freetext -- a single free text to analyse in test mode. If supplied, the infile, medcodefile and outfile parameters are ignored and instead this single text is analysed 
-* medcode -- a single medcode associated with freetext (text to analyse in test mode)
+* medcode -- (optional) a single medcode associated with freetext (text to analyse in test mode)
+* ignoreerrors -- (optional) TRUE to force the program to continue even if it encounters an internal error, FALSE or blank (or omit) for default behaviour. It may be useful to set ignoreerrors to TRUE when running it on a large corpus of text, to stop the program from stalling in case of an unexpected error. 
+
+The logfile and lookups parameters must always be supplied. To analyse a text file, infile and outfile must be supplied. To test a single text, freetext must be supplied. The remaining parameters are optional.
 
 e.g.
 
@@ -54,6 +60,7 @@ e.g.
     medcode      1
     logfile      Z:\home\log1.log
     lookups      Z:\home\lookups\
+    ignoreerrors TRUE
 
 ### Graphical version (fma15gui.exe)
 
