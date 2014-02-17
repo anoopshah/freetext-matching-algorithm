@@ -14,6 +14,11 @@ Module=synonym; synonym.bas
 Module=terms; terms.bas
 Module=wordlist; wordlist.bas
 Startup="Sub Main"
+HelpFile=""
+NoControlUpgrade=1
+Title="fma"
+ExeName32="fma16command.exe"
+Path32="\\uclusers\dfs\home\rmjd\rmjdas2\PCSettings\WTSDesktop"
 Command32=""
 Name="FMA"
 HelpContextID="0"
@@ -39,6 +44,7 @@ Unattended=0
 Retained=0
 ThreadPerObject=0
 MaxNumberOfThreads=1
+DebugStartupOption=0
 
 [MS Transaction Server]
 AutoRefresh=1

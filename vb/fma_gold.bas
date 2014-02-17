@@ -79,11 +79,6 @@ lookupfile = FreeFile
 Print #logfileno, "Loading lookup tables from " & lookups
 Print #logfileno, freetext_core.import_all_lookups(lookups) & newline
 
-If in_set(ignoreerrors, "TRUE", "T", "true", "t") Then
-    Print #logfileno, "Ignoring any errors during program execution"
-    On Error Resume Next
-End If
-
 If freetext = "" Then
     ' Load from file
     
@@ -111,6 +106,11 @@ If freetext = "" Then
     Dim rawtext As String
     Dim i As Long ' counter for medcodes
     Dim j As Long ' counter for outdata
+    
+    If in_set(ignoreerrors, "TRUE", "T", "true", "t") Then
+        Print #logfileno, "Ignoring any errors during program execution"
+        On Error Goto ErrorHandler
+    End If
 
     ' Loop through the input file, interpreting each text
     Do While Not EOF(infileno)
@@ -184,6 +184,15 @@ Else
     Next
 End If
 Close #logfileno
+Exit Sub
+
+Errorhandler:
+Print #logfileno, "Error " & Err & " when analysing text with pracid=" & _
+    thispracid & ", textid=" & thistextid & ", medcode=" & origmedcode & "."
+    ' Abandon analysis of this text, move on to the next one
+    freetext = ""
+    origmedcode = 0
+Resume
 End Sub
 
 Function gettextid(str As String) As Long
