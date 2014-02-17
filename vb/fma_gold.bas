@@ -109,7 +109,7 @@ If freetext = "" Then
     
     If in_set(ignoreerrors, "TRUE", "T", "true", "t") Then
         Print #logfileno, "Ignoring any errors during program execution"
-        On Error Goto ErrorHandler
+        On Error GoTo Errorhandler
     End If
 
     ' Loop through the input file, interpreting each text
@@ -187,12 +187,16 @@ Close #logfileno
 Exit Sub
 
 Errorhandler:
-Print #logfileno, "Error " & Err & " when analysing text with pracid=" & _
-    thispracid & ", textid=" & thistextid & ", medcode=" & origmedcode & "."
+If freetext <> "" Then
+    Print #logfileno, "Error " & Err & " when analysing text with pracid=" & _
+        thispracid & ", textid=" & thistextid & ", medcode=" & origmedcode & "."
     ' Abandon analysis of this text, move on to the next one
-    freetext = ""
-    origmedcode = 0
-Resume
+End If
+freetext = ""
+pd.clear
+outrows = 0
+origmedcode = 0
+Resume Next
 End Sub
 
 Function gettextid(str As String) As Long
