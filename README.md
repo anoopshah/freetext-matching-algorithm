@@ -126,3 +126,21 @@ Some of the data fields contain categorical data in the forms of lookups:
     * 2 = Category 1b (cause of 1a)
     * 3 = Category 1c (cause of 1b)
     * 4 = Category 2 (other disorders, not directly causing death)
+
+## Findings, conditions or diagnoses
+
+For most projects the algorithm is used to extract diagnoses and findings (eg. symptoms) - these are recorded using the following entity types:
+* 2005 = current or previous diagnosis (i.e. a confirmed event/finding which is assumed to be current or where the time is not stated)
+* 1002 = medical history (i.e. tends to be a previous diagnosis)
+
+The data fields for entities 1002 and 2005 contain the date or duration, if stated in the text:
+* data1 = date
+* data2 = duration
+* data3 = duration units (SUM lookup)
+
+For findings / conditions that do not apply to the patient or are not confirmed, the associated condition is denoted by the medcode in data1, and the date or duration is not extracted:
+* 2004 = suspected condition
+* 1087 = family history
+* 1085 = negative condition
+* 2002 = negative past medical history
+* 2003 = negative family history
