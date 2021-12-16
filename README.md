@@ -89,6 +89,8 @@ All files must have Windows-style line endings.
 
 ## Output file format
 
+* logfile -- log file reporting which files were loaded and the number of texts analysed. In test mode, the log file also shows analysis information and results.
+
 * outfile -- comma separated values file, with the following columns:
     * pracid
     * textid
@@ -97,7 +99,30 @@ All files must have Windows-style line endings.
     * enttype -- virtual entity type for information extracted from text
     * data1 ... data4 -- additional information (e.g. laboratory values, family history)
 
-* logfile -- log file reporting which files were loaded and the number of texts analysed. In test mode, the log file also shows analysis information and results.
+The definitions of enttype and corresponding data fields is defined in docs/fma_entity_definitions.txt
+(https://github.com/anoopshah/freetext-matching-algorithm/blob/master/docs/fma_entity_definitions.txt).
+The 'enttype' field is a code for the type of data in that row, which defines the meaning of tha additional information in the fields data1, data2, data3 etc.
 
+All the output data fields are numeric. This allows the file to be checked simply for the absence of text to ensure that no identifying information is included.
 
-
+Some of the data fields contain categorical data in the forms of lookups:
+* Medical Dictionary -- medcode
+* YYYYMMDD -- a date expressed as an 8-digit integer, e.g. 20011209 (9 December 2001)
+* SUM -- units of time
+    * 41 = days
+    * 101 = months
+    * 147 = weeks
+    * 148 = years
+* TQU -- qualifier for a result
+    * 9 = normal
+    * 12 = abnormal
+    * 15 = nil
+    * 21 = positive
+    * 22 = negative
+* OPR -- operator, always 3 (=):
+    * 3 = equals (=)
+* COD -- cause of death category
+    * 1 = Category 1a (immediate cause)
+    * 2 = Category 1b (cause of 1a)
+    * 3 = Category 1c (cause of 1b)
+    * 4 = Category 2 (other disorders, not directly causing death)
